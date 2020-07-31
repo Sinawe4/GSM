@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 body {
-    font-size: 16px;
-    font-family: '맑은 고딕';
+    width: auto;
+    height: 100%;
     letter-spacing: -1px;
     line-height: 160%;
     background-repeat: no-repeat;
@@ -29,8 +29,9 @@ h3 {
     height:40px;
 }
 .name {
+    position: fixed;
+    top: 90%;
     width:80px;
-    height:402px;
 }
 ul {
     width: 100%;
