@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웨일 기본화면</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <ul id="logo">
+        <form>
+            <input id="inputSearch" type="text" name="query" class="naver-search" placeholder="검색어를 입력하세요" accesskey="s" maxlength="255" autocomplete="off" spellcheck="false">   
+        </form>
+    </ul>
+    <div class="vc">
+    <div class="hc">
+        <h1 id="clock1" style="color:black;">00:00</h1>
+    </div>
+    </div>
+    <div class="vc">
+    <div class="hc">
+        <h3 id="clock2" style="color:black;">00:00</h1>
+    </div>
+    </div>
+
+    <script>
+    
+    var clockTarget1 = document.getElementById("clock1");
+    var clockTarget2 = document.getElementById("clock2");
+    
+    function clock() {
+        var date = new Date();
+        // date Object를 받아오고 
+        var month = date.getMonth();
+        var clockDate = date.getDate();
+        var day = date.getDay();
+        var week = ['일', '월', '화', '수', '목', '금', '토'];
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+        clockTarget1 .innerText = `${hours < 10 ? `0${hours}` : hours}시${minutes < 10 ? `0${minutes }`  : minutes }분`;
+        clockTarget2 .innerText = `${month+1}월 ${clockDate}일 ${week[day]}요일 `
+    }
+
+    
+    function init() {
+    clock();
+    setInterval(clock, 1000);
+    }
+    
+    init();
+    
+    </script>
+    <span class="name">웨일 시티</span>
+</body>
+</html>
